@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Meet </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Meet-ui</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<style>
+body {
+    margin-left: 25%;
+    margin-right: 26%;
+    padding: 0;
+    color: #333;
+}
+
+#search-container {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search {
+    padding: 14px;
+    width: 100%;
+    font-size: 17px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+#search:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#students-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.student-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 700px;
+    margin: 10px 0;
+}
+
+
+.student-card span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+</style>
 <body>
-    <input type="text" id ="search" placeholder="search participants">
-    <div id="participants_container"> </div>
-    <script scr="script.js"></script>
+
+  <div id="search-container">
+    <input type="text" id="search" placeholder="Search participants" onkeyup="filterstudents()">
+  </div>
+
+  <div id="students-container"></div>
+
+<script  src="./script.js"></script>
 </body>
 </html>
